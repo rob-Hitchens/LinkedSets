@@ -132,7 +132,7 @@ library HitchensLinkedKeySetsLib {
         insertForeignKey(self, set, primaryKey, foreignSet, foreignKey);
     }
     /**
-     * @notice Get a foreign key. If not explicitly set, returns 0x0
+     * @notice Get a foreign key. If foreign key is not explicitly set, returns 0x0. Primary key and set must exist. 
      * @param self LinkedSets struct. 
      * @param set setId. The set that contains the primary key to inspect. 
      * @param primaryKey The primary key with an associated foreignKey. 
