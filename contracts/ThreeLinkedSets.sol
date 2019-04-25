@@ -1,7 +1,7 @@
 pragma solidity 0.5.1;
 
 import "./HitchensLinkedKeySets.sol";
-import "./ConversionUtils.sol";
+import "./ConvertUtils.sol";
 
 contract ThreeLinkedSets is ConvertUtils {
     
