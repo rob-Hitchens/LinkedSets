@@ -1,5 +1,13 @@
 pragma solidity 0.5.1;
 
+/**
+ * This is a contrived example for testing purposes only. 
+ * Three sets are joined with 0,n cardinality and full CRUD capability. 
+ * Access control and events are set aside for brevity. 
+ * Business logic concerns pertaining to invoices are set aside to
+ * syntax patterns, readability and the utility of the library itself.
+ */
+
 import "./HitchensLinkedKeySets.sol";
 import "./ConvertUtils.sol";
 
@@ -94,10 +102,10 @@ contract ThreeLinkedSets is ConvertUtils {
     function customerAtIndex(uint index) public view returns(address) { return bytes32ToAddress(keys.linkedSets[CUSTOMER].set.keyAtIndex(index)); }
     function invoiceAtIndex(uint index) public view returns(bytes32) { return keys.linkedSets[INVOICE].set.keyAtIndex(index); }
     function lineItemAtIndex(uint index) public view returns(bytes32) { return keys.linkedSets[LINEITEM].set.keyAtIndex(index); }
-    function returnCustomerInvoiceAtIndex(address customer, uint index) public view returns(bytes32) {
+    function customerInvoiceAtIndex(address customer, uint index) public view returns(bytes32) {
         return keys.linkedSets[CUSTOMER].referencingRecords[addressToBytes32(customer)][INVOICE].keyAtIndex(index);
     }
-    function returnLineItemAtIndex(bytes32 invoiceId, uint index) public view returns(bytes32) {
+    function lineItemAtIndex(bytes32 invoiceId, uint index) public view returns(bytes32) {
         return keys.linkedSets[INVOICE].referencingRecords[invoiceId][LINEITEM].keyAtIndex(index);
     }
 }
