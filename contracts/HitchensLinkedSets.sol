@@ -22,7 +22,6 @@ library HitchensLinkedKeySetsLib {
         HitchensUnorderedKeySetLib.Set linkedSetIds;
         mapping(bytes32 => LinkedSet) linkedSets;
     }
-    
     struct LinkedSet {
         // this set of keys
         HitchensUnorderedKeySetLib.Set set;
@@ -114,7 +113,7 @@ library HitchensLinkedKeySetsLib {
         LinkedSet storage s = self.linkedSets[set];
         LinkedSet storage f = self.linkedSets[foreignSet];
         require(self.linkedSetIds.exists(set), "LinkedSets(501) - Primary set does not exist."); 
-        require(s.foreignSets.exists(foreignSet), "LinkedSets(502) - Foreign set does not exist.");
+        require(s.foreignSets.exists(foreignSet), "LinkedSets(502) - Foreign set is not joined to primary set.");
         bytes32 _foreignKey = s.foreignKeys[primaryKey][foreignSet];
         f.referencingRecords[set][_foreignKey].remove(primaryKey);
         s.foreignKeys[primaryKey][foreignSet] = UNDEFINED;
