@@ -105,7 +105,7 @@ contract ThreeLinkedSets is ConvertUtils {
     function customerInvoiceAtIndex(address customer, uint index) public view returns(bytes32) {
         return keys.linkedSets[CUSTOMER].referencingRecords[addressToBytes32(customer)][INVOICE].keyAtIndex(index);
     }
-    function lineItemAtIndex(bytes32 invoiceId, uint index) public view returns(bytes32) {
+    function invoiceLineItemAtIndex(bytes32 invoiceId, uint index) public view returns(bytes32) {
         return keys.linkedSets[INVOICE].referencingRecords[invoiceId][LINEITEM].keyAtIndex(index);
     }
 }
