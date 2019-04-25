@@ -133,7 +133,7 @@ The operations in this pattern produce consistent gas cost *at any scale*.
 
 This library makes extensive use of `HitchensUnorderedKeySetsLib`. These unordered key sets are used for storing the sets that exist, the keys in the sets, the joins between the sets, the foreign keys and the referencing records (incoming links) for each key in each set. 
 
-Each such set gain methods to count members, enumerate members and check existence. Although it is technical feasible to directly insert and remove members doing so directly risks breaking referential integrity. Indeed, this wrapper exists to ensure that all necessary checks and maintenance are performed so that doing so will not break referential integrity. 
+Each such set presents methods to count members, enumerate members and check existence. Although it is technically feasible to directly insert and remove members, doing so directly risks breaking referential integrity. Indeed, this wrapper exists to ensure that all necessary checks and maintenance are performed so that doing so will not break referential integrity. 
 
 It is perfectly safe to read such properties:
 ```
