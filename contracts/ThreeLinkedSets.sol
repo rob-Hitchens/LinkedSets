@@ -4,7 +4,7 @@ pragma solidity 0.5.1;
  * This is a contrived example for testing purposes only. 
  * Three sets are joined with 0,n cardinality and full CRUD capability. 
  * Access control and events are set aside for brevity. 
- * Business logic concerns pertaining to invoices are set aside to
+ * Business logic concerns pertaining to invoices are set aside to focus on
  * syntax patterns, readability and the utility of the library itself.
  */
 
