@@ -119,7 +119,7 @@ It will be possible to delete the invoice provided no line items have been attac
 
 ## 0-to-Many 
 
-The enforced referential integrity is always zero to many. Other cardinality rules should be enforced by implementing contracts. An example would be a rule that an invoice should always have a minimum of one line item. This would be easily done with an insert process than ensures it is always so. Similarly, it may not be sensible to allow an Invoice delete function under any circumstances. It is included merely to demonstrate that deletes are easily coded and referential integrity will not be violated be deletes. 
+The enforced referential integrity is always zero to many. Other cardinality rules should be enforced by implementing contracts. An example would be a rule that an invoice should always have a minimum of one line item. This would be easily done with an insert process than ensures it is always so. Similarly, it may not be sensible to allow an Invoice delete function under any circumstances. It is included merely to demonstrate that deletes are easily coded and referential integrity will not be violated by deletes. 
 
 ## Logical Deletes
 
