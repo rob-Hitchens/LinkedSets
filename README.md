@@ -106,7 +106,7 @@ For example, the example `createInvoice` function:
 2. Inserts the primary key into the INVOICES set.
 3. Inserts the customer address as a foreign key (with type conversion to `bytes32`).
 4. Stores the arbitrary `comments` that are outside of the `LinkedSets` scope in a mapped struct. 
-
+```
     function createInvoice(address customer, string memory comments) public returns(bytes32 invoiceID) {
         INVOICE_COUNTER++;
         invoiceID = bytes32(INVOICE_COUNTER);  
@@ -114,7 +114,7 @@ For example, the example `createInvoice` function:
         keys.insertForeignKey(CUSTOMER, addressToBytes32(customer), INVOICE, invoiceID);
         invoices[invoiceID].comments = comments;
     }
-
+```
 It will be possible to delete the invoice provided no line items have been attached. 
 
 ## 0-to-Many 
